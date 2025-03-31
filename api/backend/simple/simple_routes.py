@@ -16,7 +16,7 @@ def welcome():
     current_app.logger.info('GET / handler')
     welcome_message = '<h1>Welcome to the CS 3200 Project Template REST API'
     response = make_response(welcome_message)
-    response.status_code = 200
+    response.status_code = 200 #represents that everything is good will send back what you asked for 
     return response
 
 # ------------------------------------------------------------
@@ -30,7 +30,7 @@ def get_playlist_data():
     return response
 
 # ------------------------------------------------------------
-@simple_routes.route('/niceMesage', methods = ['GET'])
+@simple_routes.route('/niceMesage', methods = ['GET']) #write /niceMessage in url to get this in the browser
 def affirmation():
     message = '''
     <H1>Think about it...</H1>
@@ -40,6 +40,13 @@ def affirmation():
     response = make_response(message)
     response.status_code = 200
     return response
+@simple_route.route("/hello") #shared folder with the laptop and the container 
+def hello():
+    message = "<H1>Hello CS 3200</H1>"
+    reponse = make_response(message)
+    response.status_code = 200 
+    return response 
+
 
 # ------------------------------------------------------------
 # Demonstrates how to redirect from one route to another. 
